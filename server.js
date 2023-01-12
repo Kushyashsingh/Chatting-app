@@ -9,11 +9,6 @@ app.get("/",(req,res) =>{
     res.sendFile(__dirname+"/index.html")
 })
 
-
-http.listen(5000,()=>{
-    console.log("server is up")
-})
-
 //socket
 
 const io = require("socket.io")(http);
@@ -21,3 +16,9 @@ const io = require("socket.io")(http);
 io.on('connection',(socket)=>{
     console.log('connected...')
 })
+
+http.listen(5000,()=>{
+    console.log("server is up")
+})
+
+
